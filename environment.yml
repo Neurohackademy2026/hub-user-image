@@ -67,6 +67,6 @@ dependencies:
     - mriqc
     - platformdirs
     - jupyter-keepalive
-    - git+https://github.com/NeuroHackademy2025/rbclib@main
+    - git+https://github.com/NeuroHackademy2026/rbclib@main
     - nipoppy
     - pytest
