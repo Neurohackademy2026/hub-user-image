@@ -8,6 +8,6 @@ ln -s ~/shared/docs ~/docs
 # Make a local cache directory.
 mkdir -p ~/cache
 # Link some global cache directories to the user's local cache.
-ln -s ln -s ~/shared/cache/PNC_FreeSurfer ~/cache/PNC_FreeSurfer
+ln -s ~/shared/cache/PNC_FreeSurfer ~/cache/PNC_FreeSurfer
 
 
