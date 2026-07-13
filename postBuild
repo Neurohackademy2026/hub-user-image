@@ -2,16 +2,18 @@
 
 set -ex
 
-# Make a link from the shared documents directory to the user home directory.
-ln -s ~/shared/docs ~/docs
-
-# Make a local cache directory.
-mkdir -p ~/cache
-# Link some global cache directories to the user's local cache.
-ln -s ~/shared/cache/PNC_FreeSurfer ~/cache/PNC_FreeSurfer
-
 # Install pixi.
-curl -fsSL https://pixi.sh/install.sh | PIXI_VERSION=v0.72.1 bash
+# Install Pixi
+# download the musl build since the gnu build is not available on aarch64
+curl -Ls \
+     "https://github.com/prefix-dev/pixi/releases/download/v0.72.2/pixi-$(uname -m)-unknown-linux-musl" \
+     -o /pixi \
+ && chmod +x /pixi \
+ && /pixi --version \
+ && cp /pixi /usr/bin/pixi
+
+# Local install of pixi doesn't work in repo2docker!
+# curl -fsSL https://pixi.sh/install.sh | PIXI_VERSION=v0.72.1 bash
 
 # Install jupyter-server-proxy
 pip install jupyter-server-proxy
