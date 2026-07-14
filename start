@@ -11,5 +11,8 @@ if ! [ -e /home/jovyan/docs ]
 then ln -s /home/jovyan/shared/docs /home/jovyan/docs
 fi
 
+# Add the shared bin/ dir to the path.
+export PATH="${PATH}:/home/jovyan/shared/bin"
+
 # Start the hub...
 exec "$@"
