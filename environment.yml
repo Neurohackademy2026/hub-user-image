@@ -72,4 +72,4 @@ dependencies:
     - pytest
     - fmralign
     - git+https://github.com/rmldj/hcp-utils@master
-    - pyafq[fury, nn, gpu, plot]
+    - pyafq'[fury, nn, gpu, plot]'
